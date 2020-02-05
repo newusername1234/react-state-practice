@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Input({help, textValue}) {
+function Input({updateText, textValue}) {
     return (
         <label>
             Type Here!
-            <input onChange={help} type="text" value={textValue}></input>
+            <input onChange={updateText} type="text" value={textValue}></input>
         </label>
     )
 }

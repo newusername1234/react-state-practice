@@ -4,6 +4,7 @@ import './App.css';
 
 import Input from './Input';
 import Output from './Output';
+import ClearButton from './ClearButton';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,23 +17,27 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Input helpb={this._updateText} textValue={this.state.textValue}/>
+        <Input updateText={this._updateText} textValue={this.state.textValue}/>
         <Output textValue={this.state.textValue} />
+        <ClearButton clearInput={this._ClearInput}/>
       </div>
     );
   }
 
-  _updateText = (string) => {
+  _ClearInput = () => {
     this.setState({
-      textValue: string
+      textValue: ''
+    })
+  }
+
+  _updateText = (event) => {
+      this.setState({
+      textValue: event.target.value
     })
   }
 
 
 
 }
-
-
-
 
 export default App;
