@@ -4,6 +4,7 @@ import './App.css';
 
 import Input from './Input';
 import Output from './Output';
+import UppercaseOutput from './UppercaseOutput';
 import ClearButton from './ClearButton';
 
 class App extends React.Component {
@@ -19,12 +20,13 @@ class App extends React.Component {
       <div>
         <Input updateText={this._updateText} textValue={this.state.textValue}/>
         <Output textValue={this.state.textValue} />
-        <ClearButton clearInput={this._ClearInput}/>
+        <UppercaseOutput textValue={this.state.textValue} />
+        <ClearButton clearInput={this._clearInput}/>
       </div>
     );
   }
 
-  _ClearInput = () => {
+  _clearInput = () => {
     this.setState({
       textValue: ''
     })
@@ -35,8 +37,6 @@ class App extends React.Component {
       textValue: event.target.value
     })
   }
-
-
 
 }
 
